@@ -22,12 +22,15 @@ jobs:
 
     - name: Restore dependencies
       run: dotnet restore
+      working-directory: github4women
 
     - name: Build
       run: dotnet build --configuration Release --no-restore
+      working-directory: github4women
 
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+      working-directory: github4women
 
   custom_script:
     runs-on: ubuntu-latest
